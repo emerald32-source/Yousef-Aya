@@ -61,6 +61,26 @@
         margin-top: 20px;
         font-size: 1.5rem;
       }
+
+      /* --- الكود المضاف لإزالة الفلاتر عن الظرف وإظهاره بألوانه الطبيعية --- */
+      .intro-overlay {
+        background-color: transparent !important;
+      }
+
+      .intro-overlay::before, 
+      .intro-overlay::after {
+        display: none !important;
+        background: transparent !important;
+      }
+
+      .intro-poster, 
+      .intro-video {
+        filter: none !important;
+        -webkit-filter: none !important;
+        mix-blend-mode: normal !important;
+      }
+      /* ----------------------------------------------------------- */
+
     </style>
   </head>
   <body class="is-locked">
@@ -149,12 +169,17 @@
       <main class="invitation-page" id="invitationPage" aria-hidden="true">
         
         <section class="hero-section" style="position: relative; height: 100vh; overflow: hidden;">
-          <img 
+          <!-- تم استبدال صورة الخلفية بفيديو -->
+          <video 
             class="hero-image" 
-            src="yousef-aya-flowers.jpg" 
-            alt="خلفية رئيسية" 
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;" 
-          />
+            autoplay 
+            loop 
+            muted 
+            playsinline
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;"
+          >
+            <source src="yousef-aya-flowers.mp4" type="video/mp4" />
+          </video>
           <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.2); z-index: 1;"></div>
           
           <div class="names-surface hero-names-content reveal-on-scroll" style="position: absolute; top: 0; left: 0; right: 0; height: 100%; z-index: 10; pointer-events: none;">
@@ -260,7 +285,7 @@
             </div>
             <div class="venue-copy">
               <p class="venue-name">فندق إزدان</p>
-              <p class="venue-address" dir="rtl">برج 3</p>
+              <p class="venue-address" dir="rtl">برج ٣</p>
               <a
                 class="primary-link"
                 href="https://maps.app.goo.gl/nS7ySv4LQ2UWMTii9"
