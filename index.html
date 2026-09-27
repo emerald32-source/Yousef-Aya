@@ -38,6 +38,7 @@
       .loading-screen.is-hidden {
         opacity: 0;
         visibility: hidden;
+        pointer-events: none;
       }
 
       .loader {
@@ -55,10 +56,10 @@
       }
 
       .loading-text {
-        font-family: 'saudi', sans-serif;
+        font-family: 'B Fantezy', 'saudi', sans-serif;
         color: #3a1c4a;
         margin-top: 20px;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
       }
     </style>
   </head>
@@ -67,7 +68,7 @@
     <!-- شاشة التحميل -->
     <div id="loadingScreen" class="loading-screen">
       <div class="loader"></div>
-      <p class="loading-text">جاري تجهيز الدعوة...</p>
+      <p class="loading-text" dir="rtl">يوسف &amp; ايه</p>
     </div>
 
     <div class="invite-shell">
@@ -483,6 +484,20 @@
         </section>
       </main>
     </div>
+
+    <!-- كود إضافي لحل مشكلة التحميل اللانهائي -->
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const loader = document.getElementById('loadingScreen');
+        // في حالة تأخر تحميل الميديا عبر invitation.js، يقوم هذا الكود بإخفاء شاشة التحميل بعد 1.5 ثانية كحد أقصى.
+        setTimeout(() => {
+          if (loader && !loader.classList.contains('is-hidden')) {
+            loader.classList.add('is-hidden');
+            document.body.classList.remove('is-locked');
+          }
+        }, 1500);
+      });
+    </script>
 
     <script src="invitation.js"></script>
   </body>
