@@ -18,9 +18,58 @@
       button, a, input, select, textarea {
         outline: none;
       }
+
+      /* شاشة التحميل */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #F5EFEB; /* لون بيج هادئ */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 999999;
+        transition: opacity 0.8s ease, visibility 0.8s ease;
+      }
+
+      .loading-screen.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .loader {
+        border: 4px solid #ebdff2;
+        border-top: 4px solid #3a1c4a;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      .loading-text {
+        font-family: 'saudi', sans-serif;
+        color: #3a1c4a;
+        margin-top: 20px;
+        font-size: 1.2rem;
+      }
     </style>
   </head>
   <body class="is-locked">
+    
+    <!-- شاشة التحميل -->
+    <div id="loadingScreen" class="loading-screen">
+      <div class="loader"></div>
+      <p class="loading-text">جاري تجهيز الدعوة...</p>
+    </div>
+
     <div class="invite-shell">
       <div
         class="intro-overlay"
@@ -125,7 +174,7 @@
               <p class="wedding-quote-bottom" style="text-align: center; font-family: 'saudi', sans-serif; font-size: clamp(14px, 4vw, 18px); font-weight: 300; margin: 0; opacity: 0.9; padding: 0 15px; color: var(--bg);">و ذلك بمشيئة الله</p>
             </div>
             
-            <div class="date-wrapper" style="position: absolute; top: 74%; left: 0; right: 0; margin: auto; display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%;">
+            <div class="date-wrapper" style="position: absolute; top: 68%; left: 0; right: 0; margin: auto; display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%;">
               <p class="wedding-day-ar" style="font-family: 'saudi', sans-serif; font-size: 1.4rem; font-weight: bold; margin: 0; color: #ffffff;">يوم السبت</p>
               <p class="wedding-date-ar" style="font-family: 'saudi', sans-serif; font-size: 1.2rem; margin: 0; color: #ffffff;">٢٤ / ١٠ / ٢٠٢٦</p>
             </div>
