@@ -1,6 +1,6 @@
 @font-face {
   font-family: "B fantezy";
-  src: url("assets/fonts/B-Fantezy.ttf") format("truetype");
+  src: url("B-Fantezy.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -8,21 +8,29 @@
 
 @font-face {
   font-family: "saudi";
-  src: url("assets/fonts/Saudi.ttf") format("truetype");
+  src: url("Saudi.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SAUDI-REGULAR";
+  src: url("SAUDI-REGULAR.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 :root {
-  --bg: #f5ebd9; /* تم توحيد درجة البيج لتتطابق مع خلفية صورة names-bg.jpg */
+  --bg: #f5ebd9;
   --surface: rgba(255, 255, 255, 0.88);
   --surface-strong: rgba(245, 235, 217, 0.96);
-  --line: rgba(128, 0, 32, 0.08); /* برغندي شفاف */
+  --line: rgba(128, 0, 32, 0.08);
   --line-strong: rgba(128, 0, 32, 0.18);
-  --text: #000000; /* أسود */
-  --muted: #4a4a4a; /* رمادي داكن */
-  --accent: #800020; /* برغندي */
+  --text: #000000;
+  --muted: #4a4a4a;
+  --accent: #800020;
   --shadow-soft: 0 32px 100px -56px rgba(128, 0, 32, 0.15);
   --easing-luxury: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -245,7 +253,7 @@ a {
   font-family: "B fantezy", serif;
   font-size: clamp(3.4rem, 13vw, 4.6rem);
   font-weight: 700;
-  color: #ffffff; /* أبيض */
+  color: #ffffff;
   line-height: 1.2;
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
 }
@@ -254,7 +262,7 @@ a {
   display: block;
   font-family: "B fantezy", serif;
   font-size: clamp(2rem, 8vw, 2.8rem);
-  color: #ffffff; /* أبيض */
+  color: #ffffff;
   margin: 0.1rem 0;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
@@ -265,7 +273,7 @@ a {
   font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.9); /* أبيض */
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .wedding-reveal-divider-ar {
@@ -282,7 +290,7 @@ a {
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: #ffffff; /* أبيض */
+  color: #ffffff;
 }
 
 .invitation-section {
@@ -303,10 +311,10 @@ a {
   letter-spacing: 0.15em;
 }
 
-.section-title {
+.section-title, .wedding-quote-top {
   margin: 0.75rem 0 0;
   color: var(--accent);
-  font-family: "saudi", Georgia, serif;
+  font-family: "SAUDI-REGULAR", Georgia, serif !important;
   font-size: clamp(2.1rem, 9.5vw, 3.2rem);
   font-weight: 700;
   line-height: 1.1;
@@ -951,7 +959,7 @@ a {
 
 .guest-pass-bar {
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.85); /* أسود */
+  background: rgba(0, 0, 0, 0.85);
 }
 
 .guest-pass-code-text {
