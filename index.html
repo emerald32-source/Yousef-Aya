@@ -11,6 +11,11 @@
     <meta name="theme-color" content="#2d142c" />
     <link rel="stylesheet" href="invitation.css" />
     <style>
+      /* منع السكرول العرضي تماماً على مستوى الصفحة */
+      html, body {
+        overflow-x: hidden;
+      }
+
       * {
         -webkit-tap-highlight-color: transparent;
       }
@@ -93,7 +98,6 @@
     <!-- شاشة التحميل -->
     <div id="loadingScreen" class="loading-screen">
       <div class="loader"></div>
-      <!-- تم التعديل إلى آية بالتاء المربوطة -->
       <p class="loading-text" dir="rtl">يوسف &amp; آية</p>
     </div>
 
@@ -238,12 +242,13 @@
             </div>
           </div>
 
-          <div class="timer-isolated-bg reveal-on-scroll" style="width: 100%; display: flex; justify-content: center; padding: 0; margin-top: -10px;">
+          <!-- إضافة overflow: hidden هنا و border-radius للحاوية نفسها عشان تقص التكبير -->
+          <div class="timer-isolated-bg reveal-on-scroll" style="width: 100%; display: flex; justify-content: center; padding: 0; margin-top: -10px; overflow: hidden; border-radius: 12px;">
             <img 
               class="names-bg"
               src="names-bg.jpg" 
               alt="خلفية العداد" 
-              style="width: 100%; max-width: 100%; height: auto; border-radius: 12px; display: block; object-fit: cover; transform: scale(1.15); transform-origin: top center;" 
+              style="width: 100%; max-width: 100%; height: auto; display: block; object-fit: cover; transform: scale(1.15); transform-origin: top center;" 
             />
           </div>
         </section>
@@ -270,12 +275,10 @@
 
           <article class="venue-card reveal-on-scroll" style="--reveal-delay: 0.16s; overflow: hidden; padding-top: 0;">
             
-            <!-- صورة الفندق المدمجة أول حاجة في الكارت -->
             <div class="venue-hotel-img-wrap" style="width: 100%; height: 220px; line-height: 0;">
               <img src="ezdan-hotel-view.jpg" alt="صورة الفندق" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
             </div>
 
-            <!-- قالب الخريطة -->
             <div class="venue-map-wrap" style="border-radius: 0;">
               <div class="venue-map-frame">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7753.462459968102!2d51.5284206425346!3d25.318212352198984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c4eb413fffff%3A0x7062308ea8ddbba1!2sEzdan%20Hotel!5e0!3m2!1sar!2seg!4v1790227457432!5m2!1sar!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
@@ -295,7 +298,6 @@
               </svg>
             </div>
             
-            <!-- الاتجاهات والتفاصيل -->
             <div class="venue-copy">
               <p class="venue-name">فندق إزدان</p>
               <p class="venue-address" dir="rtl">برج ٣</p>
